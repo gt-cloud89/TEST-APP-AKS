@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: gtcloudtestappaks 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: gtcloudtestappaks
+  template:
+    metadata:
+      labels:
+        app: gtcloudtestappaks 
+    spec:
+      containers:
+        - name: gtcloudtestappaks 
+          image: mycontainerregistryakstest.azurecr.io/gtcloudtestappaks
+          ports:
+          - containerPort: 8080
